@@ -2,21 +2,14 @@ from . import modules_init
 
 
 def verify_data_empty():
-  
+    pass
 
 def main():
+    verify_data_empty()
   
-  verify_data_empty()
-  
-  
-  
-  
+    
 def create():
-  
-  global graph
-  
-  graph.run("CREATE (M: Main),\
-             ()
-  
-  
-  ")
+    global graph
+
+    graph.run("CREATE (M: Main),\
+          ")
