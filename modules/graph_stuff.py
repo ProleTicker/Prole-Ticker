@@ -6,7 +6,7 @@ def graph_var():
     import os
     from py2neo import Graph
 
-    uri = "bolt://localhost:7687"
+    uri = "bolt://localhost:7688"
     user = "neo4j"
     password = os.environ["ProlePassword"]
 
@@ -58,7 +58,7 @@ def verify_system_data(graph):
     
     main = graph.run("Match (M: Main) RETURN (M)")
     
-    if main == None:
+    if str(main) == "(No data)":
      
       # Case where database doesn't exist
       
@@ -68,6 +68,6 @@ def verify_system_data(graph):
       log.info("Initializing System.")
       
       return False
-    elif main != None:
-      
-      return True
+    elif str(main) != "(No data)":
+        log.info("Data Found")
+        return True

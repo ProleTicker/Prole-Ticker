@@ -16,11 +16,12 @@ def init():
 
     system_data = graph_stuff.verify_system_data(graph)
 
-    if system_data == True:
-        pass
-
-    elif system_data == False:
+    global log
+    if system_data == False:
         create_system.main()
+
+    elif system_data == True:
+        pass
 
 
 def main():
